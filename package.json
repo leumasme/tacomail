@@ -1,0 +1,44 @@
+{
+    "name": "npm-typescript-package-template",
+    "version": "1.0.0",
+    "description": "A typescript npm package template",
+    "keywords": [
+        "add",
+        "your",
+        "keywords",
+        "here"
+    ],
+    "repository": "github:leumasme/npm-typescript-package-template",
+    "author": "leumasme",
+    "license": "ISC",
+    "main": "./build/index.cjs",
+    "module": "./build/index.js",
+    "types": "./build/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./build/index.cjs",
+            "import": "./build/index.js",
+            "types": "./build/index.d.ts"
+        }
+    },
+    "scripts": {
+        "build": "tsup",
+        "prepack": "tsup",
+        "start": "npm run start -w example"
+    },
+    "files": [
+        "build"
+    ],
+    "workspaces": [
+        "example"
+    ],
+    "type": "module",
+    "dependencies": {
+        "tslib": "^2.4.0"
+    },
+    "devDependencies": {
+        "ts-node": "^10.9.1",
+        "tsup": "^6.2.3",
+        "typescript": "^4.8.4"
+    }
+}

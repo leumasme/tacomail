@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "ES2015",
+        "moduleResolution": "node",
+        "strict": true,
+        "skipLibCheck": false,
+        "removeComments": true,
+        "esModuleInterop": false,
+        "pretty": true,
+        "outDir": "build",
+        "rootDir": ".",
+    },
+    "ts-node": {
+        "esm": true
+    },
+}
