@@ -30,6 +30,19 @@ class Inbox {
     async deleteAllMail() {
         await deleteAllMailForAddress(this.address, this.server);
     }
+    async waitForMail(filter = (m: Mail) => true, timeout = 120000, interval = 2000): Promise<Mail> {
+        let start = Date.now();
+        while (Date.now() - start < timeout) {
+            let mails = await this.getAllMail();
+            for (const mail of mails) {
+                if (filter(mail)) {
+                    return mail;
+                }
+            }
+            await new Promise((resolve) => setTimeout(resolve, interval));
+        }
+        throw new Error("Timeout");
+    }
 }
 
 export class Mail implements MailType {
