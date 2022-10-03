@@ -16,13 +16,13 @@ export class TacomailClient {
     async getRandomInbox(): Promise<Inbox> {
         let domains = await this.getDomains();
         let domain = domains[Math.floor(Math.random() * domains.length)];
-        return new Inbox(domain, this.server);
+        let prefix = Math.random().toString(36).substring(2, 15);
+        return new Inbox(prefix + "@" + domain, this.server);
     }
 }
 
 class Inbox {
-    constructor(private address: string, private server: string) {
-    }
+    constructor(public address: string, private server: string) { }
     async getAllMail(): Promise<Mail[]> {
         return (await getMailForAddress(this.address, this.server))
             .map((mail) => new Mail(mail, this.address, this.server));
