@@ -1,14 +1,11 @@
 {
-    "name": "npm-typescript-package-template",
+    "name": "tacomail-client",
     "version": "1.0.0",
-    "description": "A typescript npm package template",
+    "description": "An api client for the tacomail trashmail api",
     "keywords": [
-        "add",
-        "your",
-        "keywords",
-        "here"
+        "email", "spammail", "spam", "trashmail", "tacomail"
     ],
-    "repository": "github:leumasme/npm-typescript-package-template",
+    "repository": "github:leumasme/tacomail-client",
     "author": "leumasme",
     "license": "ISC",
     "main": "./build/index.cjs",
@@ -34,6 +31,7 @@
     ],
     "type": "module",
     "dependencies": {
+        "axios": "^0.27.2",
         "tslib": "^2.4.0"
     },
     "devDependencies": {

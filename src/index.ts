@@ -1,5 +1,7 @@
-import { x } from "./otherfile"
-export function helloWorld() {
-    var hello: string = "Hello, World!";
-    console.log(hello, x);
-}
+export * from "./routes"
+export * as types from "./types"
+
+import { TacomailClient } from "./classes";
+import { defaultServer } from "./routes";
+export { TacomailClient };
+export default new TacomailClient(defaultServer);
