@@ -3,9 +3,7 @@ import { AttachmentType, MailType } from "./types"
 
 export class TacomailClient {
     private domains: string[] | null = null;
-    constructor(private server: string) {
-        this.server = server;
-    }
+    constructor(private server = "https://tacomail.de") { }
     async getDomains(): Promise<string[]> {
         if (this.domains == null) {
             this.domains = await getAvailableDomains(this.server);

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { MailType } from "./types";
 
-export const defaultServer = "https://tacomail.de"
+const defaultServer = "https://tacomail.de"
 
 export async function getMailForAddress(address: string, server = defaultServer): Promise<MailType[]> {
     let response = await axios.get(server + "/api/v1/mail/" + address);
