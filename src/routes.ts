@@ -14,15 +14,15 @@ export async function getAvailableDomains(server = defaultServer): Promise<strin
 }
 
 export async function deleteMail(address: string, mailId: string, server = defaultServer) {
-    await axios.delete(server + "/api/v1/" + address + "/" + mailId);
+    await axios.delete(server + "/api/v1/mail/" + address + "/" + mailId);
 }
 
 export async function deleteAllMailForAddress(address: string, server = defaultServer) {
-    await axios.delete(server + "/api/v1/" + address);
+    await axios.delete(server + "/api/v1/mail/" + address);
 }
 
 export async function downloadAttachment(address: string, mailId: string, attachment: string, server = defaultServer): Promise<ArrayBuffer> {
-    let response = await axios.get(server + "/api/v1/" + address + "/" + mailId + "/" + attachment, {
+    let response = await axios.get(server + "/api/v1/mail/" + address + "/" + mailId + "/" + attachment, {
         responseType: 'arraybuffer'
     });
     return response.data;
