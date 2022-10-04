@@ -3,6 +3,9 @@
         "target": "ES2015",
         "module": "ES2015",
         "moduleResolution": "node",
+        "lib": [
+            "ES2015"
+        ],
         "strict": true,
         "skipLibCheck": false,
         "removeComments": true,
